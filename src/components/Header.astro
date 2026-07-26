@@ -13,7 +13,7 @@ import Container from "./Container.astro";
         Khaled.
       </a>
 
-      <nav class="flex gap-12 font-mono text-lg">
+      <nav class="hidden md:flex gap-12 font-mono text-lg">
 
         <a href="#work">Work</a>
 
@@ -22,6 +22,125 @@ import Container from "./Container.astro";
         <a href="/contact">Contact</a>
 
       </nav>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <!-- Mobile overlay -->
+      <div id="mobile-overlay" class="hidden fixed inset-0 z-10 bg-black/40 md:hidden" aria-hidden="true"></div>
+
+      <!-- Mobile side menu (accessible dialog) -->
+      <aside id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 z-20 w-64 bg-white p-6 shadow-lg md:hidden" role="dialog" aria-modal="true" aria-hidden="true">
+        <button id="mobile-close" class="mb-6 text-sm font-mono" aria-label="Close menu">Close ×</button>
+        <nav class="flex flex-col gap-4 font-mono text-lg">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </aside>
+
+      <style>
+        /* Slide-in panel and overlay transition */
+        .mobile-menu {
+          transform: translateX(100%);
+          transition: transform 260ms cubic-bezier(.2,.8,.2,1);
+          will-change: transform;
+        }
+        .mobile-menu.open {
+          transform: translateX(0);
+        }
+        #mobile-overlay {
+          opacity: 0;
+          transition: opacity 260ms ease;
+          pointer-events: none;
+        }
+        #mobile-overlay.open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      </style>
+
+      <script>
+        (function(){
+          const btn = document.getElementById('menu-btn');
+          const menu = document.getElementById('mobile-menu');
+          const overlay = document.getElementById('mobile-overlay');
+          const closeBtn = document.getElementById('mobile-close');
+          let lastFocused = null;
+
+          function queryFocusable(root){
+            return Array.from(root.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'))
+              .filter(el => !el.hasAttribute('disabled'));
+          }
+
+          function open(){
+            lastFocused = document.activeElement;
+            menu.classList.add('open');
+            overlay.classList.add('open');
+            menu.setAttribute('aria-hidden','false');
+            btn.setAttribute('aria-expanded','true');
+            document.body.style.overflow = 'hidden';
+
+            // focus first focusable element in menu
+            const focusables = queryFocusable(menu);
+            if(focusables.length) focusables[0].focus();
+
+            // key handling
+            document.addEventListener('keydown', onKeyDown);
+          }
+
+          function close(){
+            menu.classList.remove('open');
+            overlay.classList.remove('open');
+            menu.setAttribute('aria-hidden','true');
+            btn.setAttribute('aria-expanded','false');
+            document.body.style.overflow = '';
+            if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+            document.removeEventListener('keydown', onKeyDown);
+          }
+
+          function onKeyDown(e){
+            if(e.key === 'Escape'){
+              close();
+              return;
+            }
+
+            if(e.key === 'Tab'){
+              const focusables = queryFocusable(menu);
+              if(focusables.length === 0) return;
+              const first = focusables[0];
+              const last = focusables[focusables.length - 1];
+              if(e.shiftKey){
+                if(document.activeElement === first){
+                  e.preventDefault();
+                  last.focus();
+                }
+              } else {
+                if(document.activeElement === last){
+                  e.preventDefault();
+                  first.focus();
+                }
+              }
+            }
+          }
+
+          btn.addEventListener('click', function(){
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if(expanded) close(); else open();
+          });
+
+          closeBtn.addEventListener('click', close);
+          overlay.addEventListener('click', close);
+
+          // ensure menu is hidden on init
+          menu.setAttribute('aria-hidden','true');
+          btn.setAttribute('aria-expanded','false');
+        })();
+      </script>
 
     </div>
 
