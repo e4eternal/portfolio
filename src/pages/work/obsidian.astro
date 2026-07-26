@@ -1,0 +1,819 @@
+---
+import NotebookLayout from "../../layouts/NotebookLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Container from "../../components/Container.astro";
+---
+
+<NotebookLayout title="Obsidian in Arabic — Khaled">
+
+  <Header />
+
+  <!-- ─── HERO ──────────────────────────────────────────── -->
+  <section class="pt-12 pb-24 relative">
+    <Container>
+
+      <!-- Back breadcrumb -->
+      <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm text-neutral-500 hover:text-neutral-800 transition mb-12 group">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition group-hover:-translate-x-0.5">
+          <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to work
+      </a>
+
+      <div class="max-w-4xl">
+
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-6">
+          01. PROJECT DEEP DIVE
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight mb-8">
+          Obsidian<br />in Arabic
+        </h1>
+
+        <p class="text-xl md:text-2xl leading-relaxed text-neutral-700 max-w-2xl mb-10">
+          I built and operated an educational content ecosystem from scratch — combining SEO, YouTube, newsletters, and live workshops to introduce Arabic speakers to Personal Knowledge Management through Obsidian.
+        </p>
+
+        <div class="flex flex-wrap gap-3 font-mono text-sm">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 border border-orange-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block"></span>
+            Content Design
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block"></span>
+            SEO
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-500 inline-block"></span>
+            Localization
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-100 text-lime-700 border border-lime-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-lime-500 inline-block"></span>
+            Community Building
+          </span>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+  <!-- ─── ANIMATED STATS TICKER ─────────────────────────── -->
+  <section class="py-16 relative overflow-hidden" id="stats-section">
+    <Container>
+
+      <!-- Tape on the stats card -->
+      <div class="relative">
+        <div class="absolute left-1/2 -top-5 -translate-x-1/2 h-10 w-20 rotate-[-2deg] tape z-10"></div>
+
+        <div class="tracing-paper rounded-[6px] px-8 md:px-14 py-12 rotate-[0.3deg]">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-neutral-400 mb-8 text-center">
+            Results at a glance
+          </p>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+
+            <div class="stat-item text-center md:py-2 pt-0 pb-6 md:pb-0">
+              <div class="text-4xl md:text-5xl font-black text-neutral-900 tabular-nums" data-target="26000" data-suffix="+" data-prefix="">
+                0
+              </div>
+              <div class="mt-2 font-mono text-xs text-neutral-500 uppercase tracking-widest">YouTube Views</div>
+            </div>
+
+            <div class="stat-item text-center md:py-2 pt-6 pb-6 md:pb-0 md:pt-0">
+              <div class="text-4xl md:text-5xl font-black text-neutral-900 tabular-nums" data-target="180000" data-suffix="+" data-prefix="">
+                0
+              </div>
+              <div class="mt-2 font-mono text-xs text-neutral-500 uppercase tracking-widest">Impressions</div>
+            </div>
+
+            <div class="stat-item text-center md:py-2 pt-6 pb-6 md:pb-0 md:pt-0">
+              <div class="text-4xl md:text-5xl font-black text-neutral-900 tabular-nums" data-target="39" data-suffix="" data-prefix="">
+                0
+              </div>
+              <div class="mt-2 font-mono text-xs text-neutral-500 uppercase tracking-widest">Live Classes</div>
+            </div>
+
+            <div class="stat-item text-center md:py-2 pt-6 pb-0">
+              <div class="text-4xl md:text-5xl font-black text-neutral-900 tabular-nums" data-target="85" data-suffix="%" data-prefix="" data-decimal="1">
+                0
+              </div>
+              <div class="mt-2 font-mono text-xs text-neutral-500 uppercase tracking-widest">YouTube CTR</div>
+            </div>
+
+          </div>
+
+          <div class="paper-curl"></div>
+        </div>
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── PROBLEM + GOAL ────────────────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Problem card -->
+        <div class="relative">
+          <div class="absolute -left-3 -top-4 h-10 w-16 rotate-[12deg] tape"></div>
+          <div class="tracing-paper rounded-[6px] px-8 pt-10 pb-8 rotate-[-0.6deg] h-full">
+            <p class="font-mono text-xs uppercase tracking-[0.25em] text-orange-500 mb-4">Problem</p>
+            <h2 class="text-3xl font-black leading-tight mb-6">
+              An Untapped Niche
+            </h2>
+            <p class="text-base leading-8 text-neutral-700">
+              In early 2024, Arabic educational resources about Personal Knowledge Management and Obsidian were <strong>extremely limited</strong>. This represented an opportunity to create one of the earliest dedicated Arabic learning platforms around the topic.
+            </p>
+            <div class="paper-curl"></div>
+          </div>
+        </div>
+
+        <!-- Goal card -->
+        <div class="relative mt-8 md:mt-12">
+          <div class="absolute right-4 -top-5 h-10 w-16 rotate-[-8deg] tape"></div>
+          <div class="tracing-paper rounded-[6px] px-8 pt-10 pb-8 rotate-[0.5deg] h-full">
+            <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber-600 mb-4">Goal</p>
+            <h2 class="text-3xl font-black leading-tight mb-6">
+              Design a Complete Learning Journey
+            </h2>
+            <p class="text-base leading-8 text-neutral-700">
+              My goal wasn't to publish isolated pieces of content. It was to design a <strong>complete learning journey</strong> where every platform served a purpose — from discovery on social media to structured learning through workshops, long-form content, and ongoing education via the newsletter.
+            </p>
+            <div class="paper-curl"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── STRATEGY: CONTENT ENGINE ─────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="mb-16">
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Strategy</p>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight max-w-xl">
+          100% Organic Growth Engine
+        </h2>
+        <p class="mt-4 text-neutral-600 max-w-lg leading-8">
+          I focused entirely on organic growth. Every live session acted as audience research — listening to questions, identifying recurring pain points, and turning them into content.
+        </p>
+      </div>
+
+      <!-- Interactive Content Engine Diagram -->
+      <div class="relative">
+        <div class="absolute left-8 -top-4 h-10 w-24 rotate-[4deg] tape"></div>
+
+        <div class="tracing-paper rounded-[6px] px-6 md:px-14 py-12 rotate-[-0.4deg]">
+
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-neutral-400 mb-10 text-center">
+            The Flywheel — hover to explore
+          </p>
+
+          <!-- Flywheel nodes -->
+          <div class="flywheel-container relative mx-auto" style="max-width: 600px; min-height: 320px;">
+
+            <div class="flywheel-nodes grid grid-cols-1 md:grid-cols-5 items-center gap-4 md:gap-0">
+
+              <div class="flywheel-node" data-detail="Twitter was the top of the funnel — sharing PKM tips, Obsidian snippets, and questions. Each tweet was a micro-experiment to test what resonated.">
+                <div class="node-inner bg-orange-100 border-2 border-orange-200 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
+                  <div class="text-2xl mb-2">𝕏</div>
+                  <div class="font-mono text-xs font-bold text-orange-700">Twitter</div>
+                  <div class="font-mono text-[10px] text-orange-500 mt-1">Discovery</div>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="hidden md:flex justify-center text-neutral-400 text-xl font-mono">→</div>
+
+              <div class="flywheel-node" data-detail="Live classes on Zoom and Google Meet, offered for free initially, gave me direct access to learners. Their questions became the raw material for all future content.">
+                <div class="node-inner bg-amber-100 border-2 border-amber-200 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
+                  <div class="text-2xl mb-2">🎙️</div>
+                  <div class="font-mono text-xs font-bold text-amber-700">Live Classes</div>
+                  <div class="font-mono text-[10px] text-amber-500 mt-1">Research</div>
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="hidden md:flex justify-center text-neutral-400 text-xl font-mono">→</div>
+
+              <div class="flywheel-node" data-detail="Audience questions shaped every article, video, and newsletter. Instead of guessing, I listened. That continuous feedback loop made each piece more relevant than the last.">
+                <div class="node-inner bg-yellow-100 border-2 border-yellow-200 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
+                  <div class="text-2xl mb-2">📝</div>
+                  <div class="font-mono text-xs font-bold text-yellow-700">Content</div>
+                  <div class="font-mono text-[10px] text-yellow-500 mt-1">Articles · Videos · Newsletter</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Feedback arrow -->
+            <div class="mt-6 flex items-center justify-center gap-3 text-neutral-400 font-mono text-xs">
+              <div class="flex-1 h-px bg-neutral-300 max-w-[120px]"></div>
+              <div class="text-center bg-neutral-100 border border-neutral-200 rounded-lg px-4 py-2 text-neutral-600 text-[11px]">
+                ↺ &nbsp;Each cycle improves the next
+              </div>
+              <div class="flex-1 h-px bg-neutral-300 max-w-[120px]"></div>
+            </div>
+
+            <!-- Detail tooltip panel -->
+            <div id="flywheel-detail" class="mt-8 min-h-[60px] rounded-xl bg-amber-50 border border-amber-200 px-6 py-4 text-sm text-amber-900 leading-7 transition-all hidden">
+            </div>
+
+          </div>
+
+          <div class="paper-curl"></div>
+        </div>
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── EXECUTION: ACCORDION ──────────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="mb-16">
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Execution</p>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight max-w-xl">
+          Every Role, One Person
+        </h2>
+        <p class="mt-4 text-neutral-600 max-w-lg leading-8">
+          I independently handled every aspect of the project. Click each phase to expand.
+        </p>
+      </div>
+
+      <div class="relative max-w-3xl">
+        <div class="absolute right-12 -top-5 h-10 w-20 rotate-[-5deg] tape"></div>
+
+        <div class="tracing-paper rounded-[6px] overflow-hidden rotate-[0.3deg]">
+
+          <!-- Phase: Research -->
+          <div class="accordion-item border-b border-neutral-200">
+            <button class="accordion-trigger w-full flex items-center justify-between px-8 py-6 text-left hover:bg-amber-50/60 transition group" aria-expanded="false">
+              <div class="flex items-center gap-5">
+                <span class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">01</span>
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-widest text-orange-500 mb-0.5">Phase 1</div>
+                  <div class="font-black text-xl">Research</div>
+                </div>
+              </div>
+              <svg class="accordion-chevron w-5 h-5 text-neutral-400 transition-transform flex-shrink-0" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="accordion-body hidden px-8 pb-6">
+              <ul class="space-y-3 ml-13">
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-3 flex-shrink-0"></span>
+                  <span>Verified there was <strong>no direct Arabic competitor</strong> in the PKM/Obsidian space — a clear first-mover advantage.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase: Community -->
+          <div class="accordion-item border-b border-neutral-200">
+            <button class="accordion-trigger w-full flex items-center justify-between px-8 py-6 text-left hover:bg-amber-50/60 transition group" aria-expanded="false">
+              <div class="flex items-center gap-5">
+                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">02</span>
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-widest text-amber-500 mb-0.5">Phase 2</div>
+                  <div class="font-black text-xl">Community</div>
+                </div>
+              </div>
+              <svg class="accordion-chevron w-5 h-5 text-neutral-400 transition-transform flex-shrink-0" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="accordion-body hidden px-8 pb-6">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-3 flex-shrink-0"></span>
+                  <span>Validated the idea through <strong>free workshops</strong> before committing to a full content calendar.</span>
+                </li>
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-3 flex-shrink-0"></span>
+                  <span>Collected direct feedback from early participants to refine the curriculum.</span>
+                </li>
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-3 flex-shrink-0"></span>
+                  <span>Iterated on teaching formats based on engagement data.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase: Website -->
+          <div class="accordion-item border-b border-neutral-200">
+            <button class="accordion-trigger w-full flex items-center justify-between px-8 py-6 text-left hover:bg-amber-50/60 transition group" aria-expanded="false">
+              <div class="flex items-center gap-5">
+                <span class="w-8 h-8 rounded-full bg-yellow-100 text-yellow-700 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">03</span>
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-widest text-yellow-600 mb-0.5">Phase 3</div>
+                  <div class="font-black text-xl">Website</div>
+                </div>
+              </div>
+              <svg class="accordion-chevron w-5 h-5 text-neutral-400 transition-transform flex-shrink-0" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="accordion-body hidden px-8 pb-6">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-3 flex-shrink-0"></span>
+                  <span>Built a <strong>WordPress website</strong> from scratch, optimized for Arabic-language search.</span>
+                </li>
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-3 flex-shrink-0"></span>
+                  <span>Created <strong>four SEO-focused articles</strong> targeting high-value Arabic search queries.</span>
+                </li>
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-3 flex-shrink-0"></span>
+                  <span>Integrated a newsletter signup and a workshop booking system into the same flow.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase: Content -->
+          <div class="accordion-item">
+            <button class="accordion-trigger w-full flex items-center justify-between px-8 py-6 text-left hover:bg-amber-50/60 transition group" aria-expanded="false">
+              <div class="flex items-center gap-5">
+                <span class="w-8 h-8 rounded-full bg-lime-100 text-lime-700 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">04</span>
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-widest text-lime-600 mb-0.5">Phase 4</div>
+                  <div class="font-black text-xl">Content Production</div>
+                </div>
+              </div>
+              <svg class="accordion-chevron w-5 h-5 text-neutral-400 transition-transform flex-shrink-0" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="accordion-body hidden px-8 pb-6">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-lime-400 mt-3 flex-shrink-0"></span>
+                  <span>Produced a <strong>comprehensive YouTube crash course</strong> — the first of its kind in Arabic for Obsidian.</span>
+                </li>
+                <li class="flex items-start gap-3 text-neutral-700 leading-7">
+                  <span class="w-1.5 h-1.5 rounded-full bg-lime-400 mt-3 flex-shrink-0"></span>
+                  <span>Applied insights gathered from <strong>dozens of live workshops</strong> directly into the video curriculum.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── RESULTS ───────────────────────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="mb-16">
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Results</p>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight max-w-2xl">
+          From experiment to ecosystem in one year.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Left column: achievements list -->
+        <div class="relative">
+          <div class="absolute -left-2 -top-5 h-10 w-16 rotate-[8deg] tape"></div>
+          <div class="tracing-paper rounded-[6px] px-8 pt-10 pb-10 rotate-[-0.5deg]">
+
+            <p class="font-mono text-xs uppercase tracking-[0.25em] text-neutral-400 mb-6">Achievements</p>
+
+            <ul class="space-y-6" id="achievements-list">
+
+              <li class="achievement-item flex items-start gap-4 opacity-0 translate-y-4 transition-all duration-500">
+                <span class="w-6 h-6 rounded-full bg-green-100 border border-green-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7">Earned the <strong>"60 Google Search clicks in 28 days" award</strong> on Google Search Console</span>
+              </li>
+
+              <li class="achievement-item flex items-start gap-4 opacity-0 translate-y-4 transition-all duration-500" style="transition-delay: 100ms">
+                <span class="w-6 h-6 rounded-full bg-green-100 border border-green-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7"><strong>71 newsletter subscribers</strong> acquired organically with zero paid promotions</span>
+              </li>
+
+              <li class="achievement-item flex items-start gap-4 opacity-0 translate-y-4 transition-all duration-500" style="transition-delay: 200ms">
+                <span class="w-6 h-6 rounded-full bg-green-100 border border-green-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7">YouTube crash course: <strong>26,000+ views · 180,000+ impressions · 8.5% CTR</strong></span>
+              </li>
+
+              <li class="achievement-item flex items-start gap-4 opacity-0 translate-y-4 transition-all duration-500" style="transition-delay: 300ms">
+                <span class="w-6 h-6 rounded-full bg-green-100 border border-green-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7">Offered <strong>39 live classes</strong> and published <strong>4 long-form articles</strong></span>
+              </li>
+
+              <li class="achievement-item flex items-start gap-4 opacity-0 translate-y-4 transition-all duration-500" style="transition-delay: 400ms">
+                <span class="w-6 h-6 rounded-full bg-purple-100 border border-purple-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5L11 5L8.5 7.5L9 11L6 9.5L3 11L3.5 7.5L1 5L4.5 4.5L6 1Z" stroke="#7c3aed" stroke-width="1.2" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7"><strong>Nominated for Gems of the Year 2024</strong> in the official Obsidian Discord community</span>
+              </li>
+
+            </ul>
+
+            <div class="paper-curl"></div>
+          </div>
+        </div>
+
+        <!-- Right column: highlight quote card -->
+        <div class="flex flex-col gap-8">
+          <div class="relative mt-8 md:mt-0">
+            <div class="absolute right-6 -top-4 h-8 w-14 rotate-[-6deg] tape"></div>
+            <div class="tracing-paper rounded-[6px] px-8 py-10 rotate-[0.6deg]">
+              <p class="font-serif italic text-2xl leading-relaxed text-neutral-700 mb-6">
+                "Within one year, the project evolved from a simple experiment into a small but engaged educational ecosystem driven entirely by organic growth."
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-px bg-neutral-400"></div>
+                <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">Project retrospective</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nomination badge card -->
+          <div class="relative">
+            <div class="tracing-paper rounded-[6px] px-8 py-8 rotate-[-0.3deg] border-l-4 border-purple-400">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-2xl">🏆</div>
+                <div>
+                  <p class="font-black text-lg leading-tight">Gems of the Year 2024</p>
+                  <p class="font-mono text-xs text-purple-600 uppercase tracking-widest mt-1">Official Obsidian Discord</p>
+                  <p class="text-sm text-neutral-600 mt-3 leading-6">Recognized by the global Obsidian community — one of the first Arabic contributors to be nominated.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── LESSONS & CHALLENGES FLIP CARDS ──────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="mb-16">
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Reflections</p>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight max-w-xl">
+          What this project taught me.
+        </h2>
+        <p class="mt-4 text-neutral-600 max-w-md leading-8">
+          Hover each card to reveal the lesson.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Flip card 1 -->
+        <div class="flip-card h-52 cursor-pointer">
+          <div class="flip-card-inner relative w-full h-full">
+            <div class="flip-card-front absolute inset-0 tracing-paper rounded-[6px] px-5 py-6 flex flex-col justify-between rotate-[-0.5deg]">
+              <span class="font-mono text-xs uppercase tracking-widest text-orange-500">Lesson 01</span>
+              <p class="font-black text-xl leading-tight">Underserved niches are goldmines.</p>
+              <span class="font-mono text-xs text-neutral-400">Hover to read →</span>
+            </div>
+            <div class="flip-card-back absolute inset-0 rounded-[6px] px-5 py-6 flex items-center justify-center" style="background: #FEF3C7; border: 2px solid #FDE68A; transform: rotateY(180deg);">
+              <p class="text-sm leading-7 text-amber-900">There is strong demand for high-quality Arabic educational content in underserved niches. Being first compounds over time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip card 2 -->
+        <div class="flip-card h-52 cursor-pointer">
+          <div class="flip-card-inner relative w-full h-full">
+            <div class="flip-card-front absolute inset-0 tracing-paper rounded-[6px] px-5 py-6 flex flex-col justify-between rotate-[0.6deg]">
+              <span class="font-mono text-xs uppercase tracking-widest text-orange-500">Lesson 02</span>
+              <p class="font-black text-xl leading-tight">SEO is a slow but powerful bet.</p>
+              <span class="font-mono text-xs text-neutral-400">Hover to read →</span>
+            </div>
+            <div class="flip-card-back absolute inset-0 rounded-[6px] px-5 py-6 flex items-center justify-center" style="background: #FEF3C7; border: 2px solid #FDE68A; transform: rotateY(180deg);">
+              <p class="text-sm leading-7 text-amber-900">Organic search compounds over time. Early investment in SEO becomes a durable, self-sustaining traffic source that no paid campaign can replicate.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip card 3 -->
+        <div class="flip-card h-52 cursor-pointer">
+          <div class="flip-card-inner relative w-full h-full">
+            <div class="flip-card-front absolute inset-0 tracing-paper rounded-[6px] px-5 py-6 flex flex-col justify-between rotate-[-0.3deg]">
+              <span class="font-mono text-xs uppercase tracking-widest text-orange-500">Lesson 03</span>
+              <p class="font-black text-xl leading-tight">Learners improve the teacher.</p>
+              <span class="font-mono text-xs text-neutral-400">Hover to read →</span>
+            </div>
+            <div class="flip-card-back absolute inset-0 rounded-[6px] px-5 py-6 flex items-center justify-center" style="background: #FEF3C7; border: 2px solid #FDE68A; transform: rotateY(180deg);">
+              <p class="text-sm leading-7 text-amber-900">Direct interaction with learners consistently improved future content quality. Every class made the next one sharper and more useful.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip card 4 -->
+        <div class="flip-card h-52 cursor-pointer">
+          <div class="flip-card-inner relative w-full h-full">
+            <div class="flip-card-front absolute inset-0 tracing-paper rounded-[6px] px-5 py-6 flex flex-col justify-between rotate-[0.4deg]">
+              <span class="font-mono text-xs uppercase tracking-widest text-orange-500">Lesson 04</span>
+              <p class="font-black text-xl leading-tight">Conversations beat keyword research.</p>
+              <span class="font-mono text-xs text-neutral-400">Hover to read →</span>
+            </div>
+            <div class="flip-card-back absolute inset-0 rounded-[6px] px-5 py-6 flex items-center justify-center" style="background: #FEF3C7; border: 2px solid #FDE68A; transform: rotateY(180deg);">
+              <p class="text-sm leading-7 text-amber-900">Audience conversations are often a better source of content ideas than keyword research alone. Real questions reveal real intent.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── CHALLENGES ────────────────────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+
+        <div>
+          <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Challenges</p>
+          <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+            The hard parts.
+          </h2>
+          <p class="text-neutral-600 leading-8 max-w-sm">
+            Running this entirely alone meant wearing every hat — and facing every constraint head-on.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute right-8 -top-4 h-9 w-16 rotate-[9deg] tape"></div>
+          <div class="tracing-paper rounded-[6px] px-8 py-10 rotate-[-0.3deg]">
+
+            <ul class="space-y-5" id="challenges-list">
+
+              <li class="challenge-item flex items-start gap-4 group cursor-default">
+                <span class="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-red-200 transition">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3V7.5" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.75" fill="#dc2626"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7 group-hover:text-neutral-900 transition">Introducing an <strong>unfamiliar concept</strong> (PKM) to an audience that had never heard of it</span>
+              </li>
+
+              <li class="challenge-item flex items-start gap-4 group cursor-default">
+                <span class="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-red-200 transition">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3V7.5" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.75" fill="#dc2626"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7 group-hover:text-neutral-900 transition"><strong>Running every part of the project alone</strong> — strategy, SEO, teaching, community, production</span>
+              </li>
+
+              <li class="challenge-item flex items-start gap-4 group cursor-default">
+                <span class="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-red-200 transition">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3V7.5" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.75" fill="#dc2626"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7 group-hover:text-neutral-900 transition">Growing entirely through <strong>organic reach</strong> with no paid advertising budget</span>
+              </li>
+
+              <li class="challenge-item flex items-start gap-4 group cursor-default">
+                <span class="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-red-200 transition">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3V7.5" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.75" fill="#dc2626"/></svg>
+                </span>
+                <span class="text-neutral-700 leading-7 group-hover:text-neutral-900 transition"><strong>Translating technical concepts</strong> into simple, clear Arabic without losing fidelity</span>
+              </li>
+
+            </ul>
+
+            <div class="paper-curl"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── WHAT I'D DO DIFFERENTLY ──────────────────────── -->
+  <section class="py-24">
+    <Container>
+
+      <div class="mb-12">
+        <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">Retrospective</p>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight max-w-xl">
+          If I did this again…
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Sticky note 1 -->
+        <div class="sticky-note relative">
+          <div class="absolute left-1/2 -top-4 -translate-x-1/2 h-8 w-14 rotate-[-3deg] tape"></div>
+          <div class="rounded-[6px] px-7 py-8 rotate-[-1deg] hover:rotate-0 transition-all duration-300 hover:shadow-xl" style="background: #FEF9C3; border: 1px solid #FEF08A;">
+            <div class="font-mono text-xs uppercase tracking-widest text-yellow-600 mb-4">01</div>
+            <p class="font-black text-lg leading-tight mb-3">Monetize earlier.</p>
+            <p class="text-sm text-yellow-900 leading-7">Define a monetization strategy mid-way — not after the audience is already there. Momentum is the right time to offer something paid.</p>
+          </div>
+        </div>
+
+        <!-- Sticky note 2 -->
+        <div class="sticky-note relative">
+          <div class="absolute left-1/2 -top-4 -translate-x-1/2 h-8 w-14 rotate-[4deg] tape"></div>
+          <div class="rounded-[6px] px-7 py-8 rotate-[0.8deg] hover:rotate-0 transition-all duration-300 hover:shadow-xl" style="background: #FEF9C3; border: 1px solid #FEF08A;">
+            <div class="font-mono text-xs uppercase tracking-widest text-yellow-600 mb-4">02</div>
+            <p class="font-black text-lg leading-tight mb-3">Build in public from day one.</p>
+            <p class="text-sm text-yellow-900 leading-7">Document the behind-the-scenes process earlier to build in public — attracting other creators interested in PKM and multiplying reach.</p>
+          </div>
+        </div>
+
+        <!-- Sticky note 3 -->
+        <div class="sticky-note relative">
+          <div class="absolute left-1/2 -top-4 -translate-x-1/2 h-8 w-14 rotate-[-5deg] tape"></div>
+          <div class="rounded-[6px] px-7 py-8 rotate-[-0.5deg] hover:rotate-0 transition-all duration-300 hover:shadow-xl" style="background: #FEF9C3; border: 1px solid #FEF08A;">
+            <div class="font-mono text-xs uppercase tracking-widest text-yellow-600 mb-4">03</div>
+            <p class="font-black text-lg leading-tight mb-3">Publish a full course.</p>
+            <p class="text-sm text-yellow-900 leading-7">The crash course's performance proved the demand for an in-depth Obsidian + PKM course. That signal should have been acted on faster.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </Container>
+  </section>
+
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <Footer />
+
+
+</NotebookLayout>
+
+
+<style>
+  /* ─── Flip cards ─────────────────── */
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* ─── Accordion ──────────────────── */
+  .accordion-chevron {
+    transition: transform 260ms ease;
+  }
+
+  .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ─── Achievement animations ─────── */
+  .achievement-item.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>
+
+
+<script>
+  // ─── Accordion ────────────────────────────────────────
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling as HTMLElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('.accordion-trigger').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const sibling = b.nextElementSibling as HTMLElement;
+        if (sibling) sibling.classList.add('hidden');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        body?.classList.remove('hidden');
+      }
+    });
+  });
+
+
+  // ─── Flywheel node detail ─────────────────────────────
+  const detailPanel = document.getElementById('flywheel-detail') as HTMLElement;
+
+  document.querySelectorAll('.flywheel-node').forEach(node => {
+    const detail = (node as HTMLElement).dataset.detail;
+    const inner = node.querySelector('.node-inner') as HTMLElement;
+
+    inner?.addEventListener('mouseenter', () => {
+      if (detailPanel && detail) {
+        detailPanel.textContent = detail;
+        detailPanel.classList.remove('hidden');
+      }
+    });
+
+    inner?.addEventListener('mouseleave', () => {
+      if (detailPanel) {
+        detailPanel.classList.add('hidden');
+      }
+    });
+  });
+
+
+  // ─── Animated stat counters ───────────────────────────
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.dataset.target || '0', 10);
+    const suffix = el.dataset.suffix || '';
+    const isDecimal = el.dataset.decimal === '1';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function formatNumber(n: number): string {
+      if (isDecimal) return (n / 10).toFixed(1);
+      if (n >= 1000) return (n / 1000).toFixed(0) + 'k';
+      return n.toString();
+    }
+
+    function step(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutExpo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(eased * target);
+      el.textContent = formatNumber(current) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // Intersection Observer for stats
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('[data-target]').forEach(el => {
+            animateCounter(el as HTMLElement);
+          });
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(statsSection);
+  }
+
+
+  // ─── Achievement list stagger-in ─────────────────────
+  const achievementsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.achievement-item').forEach(item => {
+          item.classList.add('visible');
+        });
+        achievementsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const achievementList = document.getElementById('achievements-list');
+  if (achievementList) achievementsObserver.observe(achievementList);
+</script>
