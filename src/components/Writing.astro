@@ -1,0 +1,163 @@
+---
+import Container from "./Container.astro";
+---
+
+<section id="writing" class="py-32">
+  <Container>
+
+    <!-- Section header -->
+    <div class="mb-16 space-y-4">
+      <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm">
+        03. WRITING
+      </p>
+      <h2 class="max-w-2xl text-5xl md:text-6xl font-black leading-tight">
+        Translation work.
+      </h2>
+      <p class="text-neutral-600 leading-8 max-w-lg">
+        Making ideas from the world available in Arabic, one carefully translated article at a time.
+      </p>
+    </div>
+
+    <!-- Article card -->
+    <div class="relative max-w-4xl">
+
+      <!-- Tape top-left -->
+      <div class="absolute -left-2 -top-5 h-12 w-20 rotate-[8deg] tape z-10"></div>
+      <!-- Tape top-right -->
+      <div class="absolute right-12 -top-4 h-10 w-14 rotate-[-5deg] tape z-10"></div>
+
+      <article class="tracing-paper relative rounded-[6px] rotate-[-0.4deg] overflow-hidden">
+
+        <!-- Page number -->
+        <p class="absolute right-8 top-6 font-mono text-sm tracking-widest text-neutral-400">
+          Page 02
+        </p>
+
+        <div class="grid md:grid-cols-[1fr_1.1fr] divide-y md:divide-y-0 md:divide-x divide-neutral-200/70">
+
+          <!-- Left column: English source meta -->
+          <div class="px-8 md:px-10 py-10 md:py-12 flex flex-col justify-between">
+
+            <div>
+              <!-- Translation badge -->
+              <div class="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="text-orange-500">
+                  <path d="M2 3h6M5 3V2M2 3v1a4 4 0 004 4M4.5 7.5A4 4 0 018.5 11h1M8 8l4 4m0 0l-4 4m4-4H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="font-mono text-[11px] uppercase tracking-widest text-orange-600 font-semibold">Translation</span>
+              </div>
+
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 mb-3">
+                Original work
+              </p>
+
+              <!-- Original English title -->
+              <h3 class="text-2xl font-black leading-snug mb-4">
+                How to Start Your Own Ultralearning Project
+              </h3>
+
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-6 h-px bg-neutral-400"></div>
+                <p class="font-mono text-sm text-neutral-500">
+                  Scott H. Young
+                </p>
+              </div>
+
+              <p class="text-sm leading-7 text-neutral-600">
+                A guide to launching a self-directed, intensive learning project — based on the principles from Young's book <em>Ultralearning</em>.
+              </p>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-8 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-neutral-100 font-mono text-[11px] text-neutral-500 uppercase tracking-wider">Learning</span>
+              <span class="px-3 py-1 rounded-full bg-neutral-100 font-mono text-[11px] text-neutral-500 uppercase tracking-wider">Productivity</span>
+              <span class="px-3 py-1 rounded-full bg-neutral-100 font-mono text-[11px] text-neutral-500 uppercase tracking-wider">Education</span>
+            </div>
+
+          </div>
+
+          <!-- Right column: Arabic translation card -->
+          <div class="px-8 md:px-10 py-10 md:py-12 flex flex-col justify-between" dir="rtl">
+
+            <div>
+              <!-- Arabic label -->
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 mb-3" dir="ltr">
+                Arabic translation · 2021
+              </p>
+
+              <!-- Arabic title — Estedad font -->
+              <h3 class="arabic-title text-3xl font-black leading-snug mb-6">
+                كيف تبدأ مشروع التعلم الفائق الخاص بك
+              </h3>
+
+              <!-- Excerpt teaser in Arabic -->
+              <p class="arabic-body text-base leading-9 text-neutral-700 mb-8">
+                ترجمة عربية لأحد أبرز المقالات في مجال التعلم الذاتي المكثّف، أسلوب التعلم الفائق الذي يجعلك تُتقن أي مهارة بسرعة وعمق.
+              </p>
+            </div>
+
+            <!-- Read CTA -->
+            <a
+              href="https://khaledmuhammad.wordpress.com/2021/04/01/%d9%83%d9%8a%d9%81-%d8%aa%d8%a8%d8%af%d8%a3-%d9%85%d8%b4%d8%b1%d9%88%d8%b9-%d8%a7%d9%84%d8%aa%d8%b9%d9%84%d9%85-%d8%a7%d9%84%d9%81%d8%a7%d8%a6%d9%82-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5-%d8%a8%d9%83/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-link group inline-flex items-center gap-3"
+              dir="ltr"
+            >
+              <span class="text-base font-semibold underline underline-offset-8 decoration-neutral-400 group-hover:decoration-orange-500 transition-colors">
+                اقرأ المقال
+              </span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Bottom bar — translation note -->
+        <div class="border-t border-neutral-200/70 px-8 md:px-10 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p class="font-mono text-xs text-neutral-400">
+            Translated with permission from the original · Originally published on WordPress
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block"></span>
+            <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">Apr 2021</span>
+          </div>
+        </div>
+
+        <!-- Corner fold -->
+        <div class="paper-curl"></div>
+
+      </article>
+    </div>
+
+  </Container>
+</section>
+
+<style>
+  /* Arabic-specific typography */
+  .arabic-title {
+    font-family: 'Estedad', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+    letter-spacing: 0;
+    word-spacing: 0.05em;
+  }
+
+  .arabic-body {
+    font-family: 'Estedad', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+    letter-spacing: 0;
+  }
+
+  /* Read link arrow in LTR inside RTL container */
+  .read-link {
+    direction: ltr;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .read-link:hover .arabic-arrow {
+    transform: translateX(-4px);
+  }
+</style>
