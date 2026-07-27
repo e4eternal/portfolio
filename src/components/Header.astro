@@ -23,122 +23,303 @@ import Container from "./Container.astro";
 
       </nav>
 
-      <!-- Mobile menu button -->
-      <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+      <!-- Mobile menu button — animated ink bars -->
+      <button
+        id="menu-btn"
+        class="menu-btn md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors hover:bg-black/6"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="menu-icon" aria-hidden="true">
+          <span class="bar bar-top"></span>
+          <span class="bar bar-mid"></span>
+          <span class="bar bar-bot"></span>
+        </span>
       </button>
 
-      <!-- Mobile overlay -->
-      <div id="mobile-overlay" class="hidden fixed inset-0 z-10 bg-black/40 md:hidden" aria-hidden="true"></div>
+      <!-- Overlay — subtle ink wash -->
+      <div id="mobile-overlay" class="hidden fixed inset-0 z-30 md:hidden" aria-hidden="true"></div>
 
-      <!-- Mobile side menu (accessible dialog) -->
-      <aside id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 z-20 w-64 bg-white p-6 shadow-lg md:hidden" role="dialog" aria-modal="true" aria-hidden="true">
-        <button id="mobile-close" class="mb-6 text-sm font-mono" aria-label="Close menu">Close ×</button>
-        <nav class="flex flex-col gap-4 font-mono text-lg">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="/contact">Contact</a>
-        </nav>
+      <!-- Drawer — notebook paper aesthetic -->
+      <aside
+        id="mobile-menu"
+        class="mobile-menu fixed inset-y-0 right-0 z-40 w-72 md:hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <!-- Paper texture layer -->
+        <div class="drawer-paper-texture" aria-hidden="true"></div>
+
+        <!-- Notebook grid -->
+        <div class="drawer-grid" aria-hidden="true"></div>
+
+        <!-- Left red margin line -->
+        <div class="drawer-margin" aria-hidden="true"></div>
+
+        <!-- Drawer content -->
+        <div class="drawer-content relative z-10 flex flex-col h-full px-8 py-8">
+
+          <!-- Top row: logo echo + close -->
+          <div class="flex items-center justify-between mb-12">
+            <span class="font-mono text-sm text-neutral-400 tracking-widest uppercase">Menu</span>
+            <button
+              id="mobile-close"
+              class="close-btn w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-black/8"
+              aria-label="Close menu"
+            >
+              <span class="close-icon" aria-hidden="true">
+                <span class="close-bar close-bar-1"></span>
+                <span class="close-bar close-bar-2"></span>
+              </span>
+            </button>
+          </div>
+
+          <!-- Nav links — stagger in -->
+          <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
+            <a href="/#work"    class="drawer-link" style="--i:0">Work</a>
+            <a href="/#about"   class="drawer-link" style="--i:1">About</a>
+            <a href="/contact"  class="drawer-link" style="--i:2">Contact</a>
+          </nav>
+
+          <!-- Bottom note -->
+          <div class="mt-auto">
+            <p class="font-mono text-xs text-neutral-400 italic">— Khaled's notebook</p>
+          </div>
+
+        </div>
       </aside>
 
       <style>
-        /* Slide-in panel and overlay transition */
-        .mobile-menu {
-          transform: translateX(100%);
-          transition: transform 260ms cubic-bezier(.2,.8,.2,1);
-          will-change: transform;
+        /* ── Hamburger icon ─────────────────────────────── */
+        .menu-icon {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 22px;
         }
-        .mobile-menu.open {
-          transform: translateX(0);
+
+        .bar {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: currentColor;
+          border-radius: 2px;
+          transform-origin: center;
+          transition:
+            transform 320ms cubic-bezier(.4,0,.2,1),
+            opacity   200ms ease,
+            width     320ms cubic-bezier(.4,0,.2,1);
         }
-        #mobile-overlay {
+
+        /* X morph when open */
+        .menu-btn[aria-expanded="true"] .bar-top {
+          transform: translateY(7px) rotate(45deg);
+        }
+        .menu-btn[aria-expanded="true"] .bar-mid {
           opacity: 0;
-          transition: opacity 260ms ease;
+          transform: scaleX(0);
+        }
+        .menu-btn[aria-expanded="true"] .bar-bot {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ── Close button X ─────────────────────────────── */
+        .close-icon {
+          position: relative;
+          display: block;
+          width: 16px;
+          height: 16px;
+        }
+        .close-bar {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 1.5px;
+          background: currentColor;
+          border-radius: 2px;
+        }
+        .close-bar-1 { transform: rotate(45deg); }
+        .close-bar-2 { transform: rotate(-45deg); }
+
+        /* ── Overlay ────────────────────────────────────── */
+        #mobile-overlay {
+          background: rgba(80, 55, 30, 0.35);
+          backdrop-filter: blur(2px);
+          opacity: 0;
+          transition: opacity 300ms ease;
           pointer-events: none;
         }
         #mobile-overlay.open {
           opacity: 1;
           pointer-events: auto;
         }
+
+        /* ── Drawer panel ───────────────────────────────── */
+        .mobile-menu {
+          background: #F6EEDC;
+          border-left: 1px solid rgba(0,0,0,0.08);
+          box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+          transform: translateX(100%);
+          transition: transform 380ms cubic-bezier(.32,0,.04,1);
+          will-change: transform;
+          overflow: hidden;
+        }
+        .mobile-menu.open {
+          transform: translateX(0);
+        }
+
+        /* Paper texture overlay */
+        .drawer-paper-texture {
+          position: absolute;
+          inset: 0;
+          background-image: url('/paper.jpg');
+          background-repeat: repeat;
+          background-size: 500px;
+          opacity: 0.35;
+          mix-blend-mode: multiply;
+          pointer-events: none;
+        }
+
+        /* Notebook grid lines */
+        .drawer-grid {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(120,170,255,.09) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(120,170,255,.09) 1px, transparent 1px);
+          background-size: 40px 40px;
+          pointer-events: none;
+        }
+
+        /* Red margin line — mirrors the main page */
+        .drawer-margin {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 52px;
+          width: 2px;
+          background: #ff8b8b;
+          pointer-events: none;
+        }
+
+        /* ── Nav links ──────────────────────────────────── */
+        .drawer-link {
+          font-family: 'Fraunces', ui-serif, Georgia, serif;
+          font-size: 2rem;
+          font-weight: 700;
+          line-height: 1.1;
+          color: inherit;
+          text-decoration: none;
+          padding: 0.45em 0;
+          display: block;
+          position: relative;
+
+          /* stagger slide-in */
+          opacity: 0;
+          transform: translateX(24px);
+          transition:
+            opacity  350ms ease,
+            transform 350ms cubic-bezier(.2,.8,.2,1),
+            color 150ms ease;
+          transition-delay: calc(var(--i) * 70ms + 80ms);
+        }
+
+        .mobile-menu.open .drawer-link {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        /* Underline reveal on hover */
+        .drawer-link::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0.3em;
+          width: 0;
+          height: 2px;
+          background: #ff8b8b;
+          border-radius: 2px;
+          transition: width 240ms cubic-bezier(.4,0,.2,1);
+        }
+        .drawer-link:hover::after { width: 100%; }
+        .drawer-link:hover { color: #c0392b; }
       </style>
 
       <script>
         (function(){
-          const btn = document.getElementById('menu-btn');
-          const menu = document.getElementById('mobile-menu');
-          const overlay = document.getElementById('mobile-overlay');
-          const closeBtn = document.getElementById('mobile-close');
-          let lastFocused = null;
+          const btn     = document.getElementById('menu-btn')     as HTMLButtonElement;
+          const menu    = document.getElementById('mobile-menu')  as HTMLElement;
+          const overlay = document.getElementById('mobile-overlay') as HTMLElement;
+          const closeBtn= document.getElementById('mobile-close') as HTMLButtonElement;
+          let lastFocused: Element | null = null;
 
-          function queryFocusable(root){
-            return Array.from(root.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'))
-              .filter(el => !el.hasAttribute('disabled'));
+          function queryFocusable(root: HTMLElement){
+            return Array.from(
+              root.querySelectorAll<HTMLElement>(
+                'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+              )
+            ).filter(el => !el.hasAttribute('disabled'));
           }
 
           function open(){
             lastFocused = document.activeElement;
-            menu.classList.add('open');
-            overlay.classList.add('open');
-            menu.setAttribute('aria-hidden','false');
-            btn.setAttribute('aria-expanded','true');
+            overlay.classList.remove('hidden');
+            requestAnimationFrame(() => {
+              menu.classList.add('open');
+              overlay.classList.add('open');
+            });
+            menu.setAttribute('aria-hidden', 'false');
+            btn.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
-
-            // focus first focusable element in menu
             const focusables = queryFocusable(menu);
-            if(focusables.length) focusables[0].focus();
-
-            // key handling
+            if (focusables.length) focusables[0].focus();
             document.addEventListener('keydown', onKeyDown);
           }
 
           function close(){
             menu.classList.remove('open');
             overlay.classList.remove('open');
-            menu.setAttribute('aria-hidden','true');
-            btn.setAttribute('aria-expanded','false');
+            menu.setAttribute('aria-hidden', 'true');
+            btn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
-            if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+            overlay.addEventListener('transitionend', () => overlay.classList.add('hidden'), { once: true });
+            if (lastFocused && typeof (lastFocused as HTMLElement).focus === 'function'){
+              (lastFocused as HTMLElement).focus();
+            }
             document.removeEventListener('keydown', onKeyDown);
           }
 
-          function onKeyDown(e){
-            if(e.key === 'Escape'){
-              close();
-              return;
-            }
-
-            if(e.key === 'Tab'){
+          function onKeyDown(e: KeyboardEvent){
+            if (e.key === 'Escape'){ close(); return; }
+            if (e.key === 'Tab'){
               const focusables = queryFocusable(menu);
-              if(focusables.length === 0) return;
+              if (!focusables.length) return;
               const first = focusables[0];
-              const last = focusables[focusables.length - 1];
-              if(e.shiftKey){
-                if(document.activeElement === first){
-                  e.preventDefault();
-                  last.focus();
-                }
+              const last  = focusables[focusables.length - 1];
+              if (e.shiftKey){
+                if (document.activeElement === first){ e.preventDefault(); last.focus(); }
               } else {
-                if(document.activeElement === last){
-                  e.preventDefault();
-                  first.focus();
-                }
+                if (document.activeElement === last){ e.preventDefault(); first.focus(); }
               }
             }
           }
 
-          btn.addEventListener('click', function(){
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            if(expanded) close(); else open();
+          btn.addEventListener('click', () => {
+            btn.getAttribute('aria-expanded') === 'true' ? close() : open();
           });
-
           closeBtn.addEventListener('click', close);
           overlay.addEventListener('click', close);
 
-          // ensure menu is hidden on init
-          menu.setAttribute('aria-hidden','true');
-          btn.setAttribute('aria-expanded','false');
+          /* Close drawer links on click (single-page anchor nav) */
+          menu.querySelectorAll('.drawer-link').forEach(link => {
+            link.addEventListener('click', close);
+          });
+
+          menu.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
         })();
       </script>
 

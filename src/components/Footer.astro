@@ -2,41 +2,264 @@
 import Container from "./Container.astro";
 ---
 
-<footer class="mt-24">
-  <Container>
-    <div class="rounded-t-[40px] bg-[#F4D3A5] px-8 py-24 text-center md:px-16">
-      <h2 class="text-5xl font-black tracking-tight">
-        Thanks for reading.
-      </h2>
+<footer class="mt-32 relative">
 
-      <p class="mt-5 text-xl text-neutral-700">
-        Let's build something together.
-      </p>
+  <!-- Torn paper edge illusion -->
+  <div class="torn-edge" aria-hidden="true"></div>
 
-      <div class="mt-12 flex flex-wrap justify-center gap-8 text-lg font-medium">
-        <a
-          href="mailto:you@example.com"
-          class="transition hover:text-[#E56B35]"
-        >
-          Email
-        </a>
+  <div class="footer-body relative overflow-hidden">
 
-        <a
-          href="https://linkedin.com/in/your-profile"
-          target="_blank"
-          class="transition hover:text-[#E56B35]"
-        >
-          LinkedIn
-        </a>
+    <!-- Paper texture -->
+    <div class="footer-paper-texture" aria-hidden="true"></div>
 
-        <a
-          href="https://github.com/your-username"
-          target="_blank"
-          class="transition hover:text-[#E56B35]"
-        >
-          GitHub
-        </a>
+    <!-- Notebook grid -->
+    <div class="footer-grid" aria-hidden="true"></div>
+
+    <!-- Red margin line -->
+    <div class="footer-margin" aria-hidden="true"></div>
+
+    <!-- Horizontal ruled lines (wide notebook feel) -->
+    <div class="footer-ruled" aria-hidden="true"></div>
+
+    <Container>
+      <div class="relative z-10 py-20 md:py-28">
+
+        <!-- Top tape accent -->
+        <div class="absolute left-1/2 -translate-x-1/2 -top-5 h-10 w-24 rotate-[3deg] tape z-20"></div>
+
+        <!-- Main CTA — handwritten style -->
+        <div class="text-center mb-16">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400 mb-6">
+            End of notebook
+          </p>
+          <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-4">
+            Let's talk.
+          </h2>
+          <p class="font-serif italic text-xl text-neutral-600 max-w-md mx-auto leading-relaxed">
+            If something here caught your eye,<br class="hidden sm:inline" /> I'd love to hear from you.
+          </p>
+        </div>
+
+        <!-- Contact cards — sticky note style -->
+        <div class="flex flex-wrap justify-center gap-5 md:gap-7 mb-20">
+
+          <!-- Email -->
+          <a href="mailto:mosllamkhaled@gmail.com" class="contact-card group relative">
+            <div class="absolute left-1/2 -translate-x-1/2 -top-3 h-6 w-12 rotate-[-4deg] tape z-10"></div>
+            <div class="sticky-note sticky-note-amber rotate-[-1.5deg] group-hover:rotate-0 group-hover:-translate-y-1">
+              <div class="text-2xl mb-3 grayscale group-hover:grayscale-0 transition">✉️</div>
+              <div class="font-mono text-xs font-bold uppercase tracking-widest text-amber-800">Email</div>
+              <div class="font-mono text-[10px] text-amber-600 mt-1.5 break-all">mosllamkhaled<br/>@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/khaled101" target="_blank" rel="noopener noreferrer" class="contact-card group relative">
+            <div class="absolute left-1/2 -translate-x-1/2 -top-3 h-6 w-12 rotate-[5deg] tape z-10"></div>
+            <div class="sticky-note sticky-note-blue rotate-[1deg] group-hover:rotate-0 group-hover:-translate-y-1">
+              <div class="text-2xl mb-3 grayscale group-hover:grayscale-0 transition">💼</div>
+              <div class="font-mono text-xs font-bold uppercase tracking-widest text-blue-800">LinkedIn</div>
+              <div class="font-mono text-[10px] text-blue-600 mt-1.5">/in/khaled101</div>
+            </div>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@Khaledisnt" target="_blank" rel="noopener noreferrer" class="contact-card group relative">
+            <div class="absolute left-1/2 -translate-x-1/2 -top-3 h-6 w-12 rotate-[-2deg] tape z-10"></div>
+            <div class="sticky-note sticky-note-rose rotate-[-0.8deg] group-hover:rotate-0 group-hover:-translate-y-1">
+              <div class="text-2xl mb-3 grayscale group-hover:grayscale-0 transition">▶️</div>
+              <div class="font-mono text-xs font-bold uppercase tracking-widest text-rose-800">YouTube</div>
+              <div class="font-mono text-[10px] text-rose-600 mt-1.5">@Khaledisnt</div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Bottom doodles & flourish -->
+        <div class="flex items-center justify-center gap-6 mb-10">
+          <div class="h-px flex-1 max-w-[100px] bg-neutral-300"></div>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-neutral-300" aria-hidden="true">
+            <path d="M14 2L16.5 10.5L25 10.5L18.25 15.75L20.75 24.25L14 19L7.25 24.25L9.75 15.75L3 10.5L11.5 10.5Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          </svg>
+          <div class="h-px flex-1 max-w-[100px] bg-neutral-300"></div>
+        </div>
+
+        <!-- Attribution & spiral binding illusion -->
+        <div class="text-center">
+          <p class="font-mono text-xs text-neutral-400 mb-3">
+            Hand-crafted with care · © 2024 – <span id="footer-year">2025</span>
+          </p>
+
+          <!-- Spiral binding dots -->
+          <div class="flex justify-center gap-4 mt-6" aria-hidden="true">
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+            <span class="spiral-dot"></span>
+          </div>
+        </div>
+
+        <!-- Notebook corner fold -->
+        <div class="paper-curl"></div>
+
+        <!-- Pencil doodle SVG — small scribble in the corner -->
+        <svg class="absolute bottom-10 left-6 md:left-10 opacity-20 pointer-events-none" width="80" height="50" viewBox="0 0 80 50" fill="none" aria-hidden="true">
+          <path d="M5 40 Q15 10 35 25 Q55 40 45 15 Q38 0 60 10 Q75 17 70 35" stroke="#A8937A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Another small doodle — top right -->
+        <svg class="absolute top-14 right-6 md:right-10 opacity-15 pointer-events-none" width="50" height="50" viewBox="0 0 50 50" fill="none" aria-hidden="true">
+          <circle cx="25" cy="25" r="18" stroke="#A8937A" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+          <circle cx="25" cy="25" r="6" stroke="#A8937A" stroke-width="1" fill="none"/>
+        </svg>
+
       </div>
-    </div>
-  </Container>
+    </Container>
+
+  </div>
+
 </footer>
+
+<style>
+  /* ── Torn paper edge ──────────────────────────────────── */
+  .torn-edge {
+    position: relative;
+    height: 18px;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+  }
+  .torn-edge::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    right: -4px;
+    height: 18px;
+    background: #F6EEDC;
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 18 Q15 4 30 12 Q45 2 60 10 Q75 0 90 14 Q105 5 120 11 Q135 1 150 13 Q165 3 180 10 Q195 0 210 15 Q225 6 240 12 Q255 2 270 9 Q285 0 300 14 Q315 5 330 11 Q345 1 360 13 Q375 4 390 10 Q405 0 420 15 Q435 7 450 12 Q465 2 480 9 Q495 0 510 14 Q525 5 540 11 Q555 1 570 13 Q585 3 600 10 Q615 0 630 15 Q645 6 660 12 Q675 2 690 9 Q705 0 720 14 Q735 5 750 11 Q765 1 780 13 Q795 4 810 10 Q825 0 840 15 Q855 7 870 12 Q885 2 900 9 Q915 0 930 14 Q945 5 960 11 Q975 1 990 13 Q1005 3 1020 10 Q1035 0 1050 15 Q1065 6 1080 12 Q1095 2 1110 9 Q1125 0 1140 14 Q1155 5 1170 11 Q1185 1 1200 13 L1200 18 L0 18 Z' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 18 Q15 4 30 12 Q45 2 60 10 Q75 0 90 14 Q105 5 120 11 Q135 1 150 13 Q165 3 180 10 Q195 0 210 15 Q225 6 240 12 Q255 2 270 9 Q285 0 300 14 Q315 5 330 11 Q345 1 360 13 Q375 4 390 10 Q405 0 420 15 Q435 7 450 12 Q465 2 480 9 Q495 0 510 14 Q525 5 540 11 Q555 1 570 13 Q585 3 600 10 Q615 0 630 15 Q645 6 660 12 Q675 2 690 9 Q705 0 720 14 Q735 5 750 11 Q765 1 780 13 Q795 4 810 10 Q825 0 840 15 Q855 7 870 12 Q885 2 900 9 Q915 0 930 14 Q945 5 960 11 Q975 1 990 13 Q1005 3 1020 10 Q1035 0 1050 15 Q1065 6 1080 12 Q1095 2 1110 9 Q1125 0 1140 14 Q1155 5 1170 11 Q1185 1 1200 13 L1200 18 L0 18 Z' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+  }
+
+  /* ── Footer body ──────────────────────────────────────── */
+  .footer-body {
+    position: relative;
+    background: #F6EEDC;
+  }
+
+  .footer-paper-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url('/paper.jpg');
+    background-repeat: repeat;
+    background-size: 500px;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .footer-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(120,170,255,.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,170,255,.09) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .footer-margin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: max(32px, calc((100vw - 1152px)/2 + 40px));
+    width: 2px;
+    background: #ff8b8b;
+    pointer-events: none;
+  }
+
+  .footer-ruled {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 39px,
+      rgba(120,170,255,.07) 39px,
+      rgba(120,170,255,.07) 40px
+    );
+    pointer-events: none;
+  }
+
+  /* ── Sticky note cards ────────────────────────────────── */
+  .sticky-note {
+    width: 140px;
+    padding: 1.25rem 1rem 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow:
+      2px 3px 8px rgba(0,0,0,0.06),
+      0 1px 2px rgba(0,0,0,0.04);
+    transition:
+      transform 320ms cubic-bezier(.2,.8,.2,1),
+      box-shadow 320ms ease;
+    text-decoration: none;
+  }
+
+  .sticky-note:hover {
+    box-shadow:
+      3px 6px 16px rgba(0,0,0,0.10),
+      0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  .sticky-note-amber {
+    background: linear-gradient(165deg, #FEF9C3 0%, #FDE68A 100%);
+    border: 1px solid rgba(253, 230, 138, 0.6);
+  }
+  .sticky-note-blue {
+    background: linear-gradient(165deg, #DBEAFE 0%, #BFDBFE 100%);
+    border: 1px solid rgba(191, 219, 254, 0.6);
+  }
+  .sticky-note-rose {
+    background: linear-gradient(165deg, #FFE4E6 0%, #FECDD3 100%);
+    border: 1px solid rgba(254, 205, 211, 0.6);
+  }
+
+  .contact-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  /* ── Spiral binding dots ──────────────────────────────── */
+  .spiral-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid #C4A882;
+    background: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  .spiral-dot::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 6px;
+    background: #C4A882;
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+</script>

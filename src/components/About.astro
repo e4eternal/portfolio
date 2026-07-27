@@ -1,0 +1,249 @@
+---
+import Container from "./Container.astro";
+---
+
+<section id="about" class="py-32">
+  <Container>
+
+    <div class="mb-16">
+      <p class="font-mono text-orange-600 uppercase tracking-[0.25em] text-sm mb-4">
+        02. ABOUT
+      </p>
+      <h2 class="max-w-2xl text-5xl md:text-6xl font-black leading-tight">
+        A bit about me.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+      <!-- Left: Copy on tracing paper -->
+      <div class="relative">
+
+        <!-- Tape -->
+        <div class="absolute -right-2 -top-5 h-12 w-20 rotate-[-6deg] tape z-10"></div>
+
+        <article class="tracing-paper relative rounded-[6px] px-8 sm:px-12 pt-12 pb-10 rotate-[0.4deg]">
+
+          <p class="text-lg md:text-xl leading-9 text-neutral-800 mb-6">
+            I'm a content creator based in <strong>Cairo</strong>, focused on making technical and complex topics genuinely accessible to Arabic-speaking audiences.
+          </p>
+
+          <p class="text-lg md:text-xl leading-9 text-neutral-700">
+            My work lives at the intersection of <strong>language</strong>, <strong>design</strong>, and <strong>knowledge</strong>, whether that's adapting a product's voice for a new market, or building content that people actually finish reading.
+          </p>
+
+          <!-- Corner details -->
+          <p class="absolute right-8 top-6 font-mono text-sm tracking-widest text-neutral-400">
+            Page 02
+          </p>
+          <p class="absolute bottom-5 right-7 rotate-1 font-serif italic text-sm text-neutral-400">
+            Cairo, Egypt
+          </p>
+          <div class="paper-curl"></div>
+
+        </article>
+      </div>
+
+      <!-- Right: Cairo skyline illustration -->
+      <div class="relative flex items-end justify-center md:pt-8">
+
+        <!-- Tape on illustration card -->
+        <div class="absolute left-1/2 -translate-x-1/2 -top-4 h-10 w-16 rotate-[5deg] tape z-10"></div>
+
+        <div class="tracing-paper relative rounded-[6px] p-6 sm:p-10 rotate-[-0.6deg] w-full overflow-hidden">
+          <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-5 text-center">
+            City of a Thousand Minarets
+          </p>
+
+          <!-- Cairo skyline SVG — Muhammad Ali Mosque + cityscape -->
+          <svg
+            viewBox="0 0 520 280"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="cairo-skyline w-full h-auto"
+            aria-label="Cairo skyline illustration featuring the Muhammad Ali Mosque"
+            role="img"
+          >
+            <!-- Sky — sun/moon circle -->
+            <circle cx="420" cy="65" r="28" fill="#FDE68A" opacity="0.4" class="sun-glow"/>
+            <circle cx="420" cy="65" r="16" fill="#FBBF24" opacity="0.3"/>
+
+            <!-- Birds -->
+            <g class="birds" stroke="#C4A882" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5">
+              <path d="M80 50 Q84 45 88 50 Q92 45 96 50" class="bird bird-1"/>
+              <path d="M130 35 Q133 31 136 35 Q139 31 142 35" class="bird bird-2"/>
+              <path d="M350 45 Q353 41 356 45 Q359 41 362 45" class="bird bird-3"/>
+            </g>
+
+            <!-- ── Background: Distant cityscape silhouette ── -->
+            <g opacity="0.12">
+              <rect x="10" y="160" width="25" height="100" rx="1" fill="#78716C"/>
+              <rect x="40" y="175" width="18" height="85" rx="1" fill="#78716C"/>
+              <rect x="62" y="150" width="22" height="110" rx="1" fill="#78716C"/>
+              <rect x="440" y="165" width="20" height="95" rx="1" fill="#78716C"/>
+              <rect x="465" y="145" width="25" height="115" rx="1" fill="#78716C"/>
+              <rect x="495" y="170" width="20" height="90" rx="1" fill="#78716C"/>
+            </g>
+
+            <!-- ── Muhammad Ali Mosque (Citadel) ─── -->
+            <g class="mosque-group">
+
+              <!-- Citadel platform / hill -->
+              <path d="M140 260 Q180 220 230 215 L370 215 Q420 220 460 260 Z" fill="#D6CFC4" opacity="0.3"/>
+
+              <!-- Main building body -->
+              <rect x="200" y="185" width="200" height="75" rx="3" fill="none" stroke="#A8937A" stroke-width="1.5"/>
+              <!-- Arched windows row -->
+              <g stroke="#A8937A" stroke-width="1" opacity="0.5">
+                <path d="M220 220 Q220 210 230 210 Q240 210 240 220"/>
+                <path d="M250 220 Q250 210 260 210 Q270 210 270 220"/>
+                <path d="M280 220 Q280 210 290 210 Q300 210 300 220"/>
+                <path d="M310 220 Q310 210 320 210 Q330 210 330 220"/>
+                <path d="M340 220 Q340 210 350 210 Q360 210 360 220"/>
+                <path d="M370 220 Q370 210 380 210 Q390 210 390 220"/>
+              </g>
+              <!-- Lower arcade arches -->
+              <g stroke="#A8937A" stroke-width="1" opacity="0.35">
+                <path d="M215 260 L215 240 Q215 230 225 230 Q235 230 235 240 L235 260"/>
+                <path d="M245 260 L245 240 Q245 230 255 230 Q265 230 265 240 L265 260"/>
+                <path d="M275 260 L275 240 Q275 230 285 230 Q295 230 295 240 L295 260"/>
+                <path d="M305 260 L305 240 Q305 230 315 230 Q325 230 325 240 L325 260"/>
+                <path d="M335 260 L335 240 Q335 230 345 230 Q355 230 355 240 L355 260"/>
+                <path d="M365 260 L365 240 Q365 230 375 230 Q385 230 385 240 L385 260"/>
+              </g>
+
+              <!-- Central large dome -->
+              <ellipse cx="300" cy="185" rx="50" ry="42" fill="none" stroke="#A8937A" stroke-width="1.8" class="dome dome-main"/>
+              <!-- Dome crescent finial -->
+              <line x1="300" y1="143" x2="300" y2="133" stroke="#C4A265" stroke-width="1.5"/>
+              <circle cx="300" cy="130" r="3.5" fill="none" stroke="#C4A265" stroke-width="1.2"/>
+              <path d="M298 127 Q300 125 302 127" stroke="#C4A265" stroke-width="1" fill="none"/>
+
+              <!-- Half-domes (left & right of main dome) -->
+              <path d="M250 188 Q265 165 280 185" fill="none" stroke="#A8937A" stroke-width="1.2" opacity="0.6"/>
+              <path d="M320 185 Q335 165 350 188" fill="none" stroke="#A8937A" stroke-width="1.2" opacity="0.6"/>
+
+              <!-- ── Left pencil minaret ── -->
+              <g class="minaret minaret-left">
+                <rect x="195" y="120" width="10" height="140" rx="2" fill="none" stroke="#A8937A" stroke-width="1.4"/>
+                <!-- Minaret balcony -->
+                <rect x="191" y="145" width="18" height="4" rx="1" fill="none" stroke="#A8937A" stroke-width="1"/>
+                <rect x="192" y="165" width="16" height="3" rx="1" fill="none" stroke="#A8937A" stroke-width="0.8"/>
+                <!-- Conical top -->
+                <path d="M195 120 L200 95 L205 120" fill="none" stroke="#A8937A" stroke-width="1.4"/>
+                <!-- Finial -->
+                <line x1="200" y1="95" x2="200" y2="88" stroke="#C4A265" stroke-width="1.2"/>
+                <circle cx="200" cy="85" r="2.5" fill="none" stroke="#C4A265" stroke-width="1"/>
+              </g>
+
+              <!-- ── Right pencil minaret ── -->
+              <g class="minaret minaret-right">
+                <rect x="395" y="120" width="10" height="140" rx="2" fill="none" stroke="#A8937A" stroke-width="1.4"/>
+                <!-- Minaret balcony -->
+                <rect x="391" y="145" width="18" height="4" rx="1" fill="none" stroke="#A8937A" stroke-width="1"/>
+                <rect x="392" y="165" width="16" height="3" rx="1" fill="none" stroke="#A8937A" stroke-width="0.8"/>
+                <!-- Conical top -->
+                <path d="M395 120 L400 95 L405 120" fill="none" stroke="#A8937A" stroke-width="1.4"/>
+                <!-- Finial -->
+                <line x1="400" y1="95" x2="400" y2="88" stroke="#C4A265" stroke-width="1.2"/>
+                <circle cx="400" cy="85" r="2.5" fill="none" stroke="#C4A265" stroke-width="1"/>
+              </g>
+
+            </g>
+
+            <!-- ── Palm trees ── -->
+            <g class="palm-tree palm-1" opacity="0.4">
+              <line x1="105" y1="265" x2="108" y2="195" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M108 195 Q90 180 75 185" stroke="#6B8E5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M108 195 Q95 175 82 172" stroke="#6B8E5A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M108 195 Q115 175 130 180" stroke="#6B8E5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M108 195 Q120 178 135 172" stroke="#6B8E5A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M108 195 Q108 172 105 165" stroke="#6B8E5A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </g>
+
+            <g class="palm-tree palm-2" opacity="0.3">
+              <line x1="475" y1="265" x2="472" y2="205" stroke="#8B7355" stroke-width="2" stroke-linecap="round"/>
+              <path d="M472 205 Q458 192 448 195" stroke="#6B8E5A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M472 205 Q480 190 492 193" stroke="#6B8E5A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M472 205 Q472 188 470 180" stroke="#6B8E5A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </g>
+
+            <!-- ── Ground line ── -->
+            <line x1="0" y1="262" x2="520" y2="262" stroke="#C4A882" stroke-width="1" opacity="0.4"/>
+
+            <!-- Small decorative stars / geometric patterns -->
+            <g opacity="0.15" fill="#A8937A">
+              <polygon points="50,85 52,80 54,85 50,82 54,82" />
+              <polygon points="160,55 162,50 164,55 160,52 164,52" />
+              <polygon points="450,40 452,35 454,40 450,37 454,37" />
+            </g>
+
+          </svg>
+
+          <div class="paper-curl"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </Container>
+</section>
+
+
+<style>
+  /* ── Subtle SVG animations ───────────────────────────── */
+
+  /* Soft sun pulse */
+  .sun-glow {
+    animation: sun-pulse 4s ease-in-out infinite;
+  }
+  @keyframes sun-pulse {
+    0%, 100% { opacity: 0.35; r: 28; }
+    50%      { opacity: 0.55; r: 31; }
+  }
+
+  /* Birds glide */
+  .bird {
+    animation: bird-drift 6s ease-in-out infinite;
+  }
+  .bird-1 { animation-delay: 0s; }
+  .bird-2 { animation-delay: 1.5s; }
+  .bird-3 { animation-delay: 3s; }
+
+  @keyframes bird-drift {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(12px) translateY(-3px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Dome subtle draw-in on scroll (controlled via class) */
+  .dome-main {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: dome-draw 2s ease-out forwards;
+  }
+  @keyframes dome-draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Palm sway */
+  .palm-tree {
+    transform-origin: bottom center;
+    animation: palm-sway 5s ease-in-out infinite;
+  }
+  .palm-2 { animation-delay: 1s; animation-duration: 6s; }
+
+  @keyframes palm-sway {
+    0%, 100% { transform: rotate(0deg); }
+    50%      { transform: rotate(1.5deg); }
+  }
+
+  /* Section fade-in on scroll */
+  #about {
+    animation: about-fade 0.8s ease-out both;
+  }
+  @keyframes about-fade {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
